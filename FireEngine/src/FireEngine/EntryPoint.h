@@ -14,12 +14,18 @@ extern FireEngine::Application FireEngine::CreateApplication();
 extern FireEngine::Application* FireEngine::CreateApplication();
 
 int main(int argc, char** argv) {
+	FireEngine::Log::Init();
+	FIRE_CORE_WARN("Initialized Log!");
+
+	int a = 5;
+	FIRE_INFO("Hello! Var={0}", a);
 
 	auto app = FireEngine::CreateApplication();
 	app->Run();
+
 	delete app;
-	//FireEngine::Print();
 }
+
 
 
 
